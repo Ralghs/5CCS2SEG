@@ -32,12 +32,17 @@ public class IntegerArray {
    * Sorts the contents of the array, from lowest integer to highest.
    */
   public void sort() {
-      for (int i = 1; i < data.length; i++) {
-          for (int j = i; j > 0; j--) {
-              if (data[j] < data[j - 1]) {
-                  swap(j, j-1);
-              }
-          }
-      }
+    int n = data.length;
+    int temp = 0;
+    for(int i=0; i < n; i++){
+        for(int j=1; j < (n-i); j++){
+            if(data[j-1] > data[j]){
+                //swap elements
+                temp = data[j-1];
+                data[j-1] = data[j];
+                data[j] = temp;
+            }
+        }
+    }
   }
 }
